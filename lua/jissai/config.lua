@@ -15,7 +15,7 @@ local cfg = {}
 
 ---@param newCfg jissai.config
 local function setup(newCfg)
-    vim.tbl_extend("force", cfg, newCfg)
+    cfg = vim.tbl_extend("force", cfg, newCfg)
 end
 
 return { cfg = cfg, setup = setup }
