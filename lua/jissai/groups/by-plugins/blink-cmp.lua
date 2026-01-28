@@ -1,0 +1,30 @@
+---@param hls jissai.highlights
+---@param gr jissai.groups
+return function(hls, gr)
+    gr.BlinkCmpKindText = hls.docs.types.none
+    gr.BlinkCmpKindMethod = hls.docs.types.function_
+    gr.BlinkCmpKindFunction = hls.docs.types.function_
+    gr.BlinkCmpKindConstructor = hls.docs.types.function_
+    gr.BlinkCmpKindField = hls.docs.types.property
+    gr.BlinkCmpKindVariable = hls.docs.types.variable
+    gr.BlinkCmpKindClass = hls.docs.types.class
+    gr.BlinkCmpKindInterface = hls.docs.types.interface
+    gr.BlinkCmpKindModule = hls.docs.types.namespace
+    gr.BlinkCmpKindProperty = hls.docs.types.property
+    gr.BlinkCmpKindUnit = hls.docs.types.none
+    gr.BlinkCmpKindValue = hls.docs.types.none
+    gr.BlinkCmpKindEnum = hls.docs.types.enum
+    gr.BlinkCmpKindKeyword = hls.docs.types.keyword
+    gr.BlinkCmpKindSnippet = hls.docs.types.snippet
+    gr.BlinkCmpKindColor = hls.docs.types.value
+    gr.BlinkCmpKindFile = hls.docs.types.path
+    gr.BlinkCmpKindReference = hls.docs.types.value
+    gr.BlinkCmpKindFolder = hls.docs.types.path
+    gr.BlinkCmpKindEnumMember = hls.docs.types.enum
+    gr.BlinkCmpKindConstant = hls.docs.types.value
+    gr.BlinkCmpKindStruct = hls.docs.types.struct
+    gr.BlinkCmpKindEvent = hls.docs.types.event
+    gr.BlinkCmpKindOperator = hls.docs.types.none
+    gr.BlinkCmpKindTypeParameter = hls.docs.types.value
+    gr.BlinkCmpKindCopilot = hls.docs.types.ai
+end

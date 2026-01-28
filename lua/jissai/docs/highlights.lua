@@ -1,0 +1,252 @@
+---@meta _
+
+---@alias jissai.highlight.style
+---| "bold"
+---| "standout"
+---| "underline"
+---| "undercurl"
+---| "underdouble"
+---| "underdotted"
+---| "underdashed"
+---| "strikethrough"
+---| "italic"
+---| "reverse"
+
+------------------------------------------------------------
+---@class (exact) jissai.highlight
+------------------------------------------------------------
+---
+--- Text color
+---@field fg? jissai.hsl|"NONE"
+---
+--- Background color
+---@field bg? jissai.hsl|"NONE"
+---
+--- Text styles
+---@field style? jissai.highlight.style[]
+---
+--- Makes background transparent
+---@field blend? number # [0; 100]
+---
+--- Default: `false`.
+--- If `true` then it will allow combination with other highlights
+---@field combine? boolean
+---
+--- Links to other neovim highlight group
+---@field link? string
+---
+--- Alternative to `link`. Copies all highlight parameters and overrides them.
+--- Examples:
+--- - "gui.shadow"
+--- - "string.regular"
+---@field as? string
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights.gui_focusable
+------------------------------------------------------------
+---@field focus jissai.highlight
+---@field nofocus jissai.highlight
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights.comment
+------------------------------------------------------------
+---@field regular jissai.highlight
+---@field todo jissai.highlight
+---@field note jissai.highlight
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights.gui.scollbar
+------------------------------------------------------------
+---@field background jissai.highlight
+---@field grip jissai.highlight
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights.gui.git
+------------------------------------------------------------
+---@field add jissai.highlight
+---@field change jissai.highlight
+---@field delete jissai.highlight
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights.gui
+------------------------------------------------------------
+---
+--- Background color
+---@field background jissai.highlights.gui_focusable
+---@field notext jissai.highlight
+---@field cursor jissai.highlight
+---@field cursor_line jissai.highlight
+---@field search jissai.highlight
+---@field search_result jissai.highlight
+---@field selection jissai.highlight
+---@field status_line jissai.highlights.gui_focusable
+---@field shadow jissai.highlight
+---@field border jissai.highlight
+---@field float_border jissai.highlight
+---@field float_background jissai.highlight
+---@field scrollbar jissai.highlights.gui.scollbar
+---@field git jissai.highlights.gui.git
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights.string
+------------------------------------------------------------
+---
+--- Regular string.
+--- Example: "this is string"
+---@field regular jissai.highlight
+---
+--- Character escape
+--- Example: "\"\\"
+---@field escape jissai.highlight
+---
+--- Special characters
+--- Example: "\n\0"
+---@field special jissai.highlight
+---
+--- Regular expression string
+--- Examples:
+--- - /this is (regular)? expression/
+--- - "This is %w+ lua pattern"
+---@field regex jissai.highlight
+
+------------------------------------------
+---@class (exact) jissai.highlights.operator
+------------------------------------------
+---
+--- Just regular operator (=, +, -, ==, etc.)
+---@field regular jissai.highlight
+---
+--- Operator that is responsible to flow
+--- Examples:
+--- - await
+--- - ? (from rust)
+--- - ! (from typescript)
+---@field flow jissai.highlight
+---
+--- Operator but keyword
+--- Examples:
+--- - and (from lua)
+--- - or (from lua)
+---@field keyword jissai.highlight
+---
+--- `return` keyword
+---@field return_ jissai.highlight
+---
+--- `break` keyword
+---@field break_ jissai.highlight
+---
+--- `continue` keyword
+---@field continue_ jissai.highlight
+---
+--- `throw` keyword
+---@field throw jissai.highlight
+
+------------------------------------------
+---@class (exact) jissai.highlights.syntax
+------------------------------------------
+---
+--- Just regular syntax (semi-colons, brackets, etc.)
+---@field decoration jissai.highlight
+---
+--- Keywords that are part of syntax (if, elseif, else, while, etc.)
+---@field keyword jissai.highlight
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights.function
+------------------------------------------------------------
+---
+--- Function definition. Should be used on function names
+---@field define jissai.highlight
+---
+--- Function call
+---@field call jissai.highlight
+---
+--- Function definition keywords
+--- Examples:
+--- - function ... end (from lua)
+--- - fn (from rust)
+---@field keyword jissai.highlight
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights.variable
+------------------------------------------------------------
+---
+--- Variable definition (var = 100) or function parameter
+---@field define jissai.highlight
+---
+--- Defined variable usage
+---@field use jissai.highlight
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights.builtin
+------------------------------------------------------------
+--- Any builtin value (library, function) that can be overridden
+---@field value jissai.highlight
+---
+--- Builtin keyword (true, false, nil)
+---@field keyword jissai.highlight
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights.lsp
+------------------------------------------------------------
+---@field inlay_hint jissai.highlight
+---@field code_lens jissai.highlight
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights.docs.types
+------------------------------------------------------------
+---@field none jissai.highlight
+---@field namespace jissai.highlight
+---@field value jissai.highlight
+---@field class jissai.highlight
+---@field interface jissai.highlight
+---@field struct jissai.highlight
+---@field enum jissai.highlight
+---@field property jissai.highlight
+---@field variable jissai.highlight
+---@field macro jissai.highlight
+---@field event jissai.highlight
+---@field function_ jissai.highlight
+---@field snippet jissai.highlight
+---@field keyword jissai.highlight
+---@field path jissai.highlight # Folder or file
+---@field ai jissai.highlight
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights.diagnostic
+------------------------------------------------------------
+---@field ok jissai.highlight
+---@field hint jissai.highlight
+---@field info jissai.highlight
+---@field warn jissai.highlight
+---@field error jissai.highlight
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights.docs
+------------------------------------------------------------
+---@field types jissai.highlights.docs.types
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights.completion
+------------------------------------------------------------
+---@field ai jissai.highlight
+
+------------------------------------------------------------
+---@class (exact) jissai.highlights
+------------------------------------------------------------
+---
+---@field gui jissai.highlights.gui
+---@field text jissai.highlight
+---@field number jissai.highlight
+---@field comment jissai.highlights.comment
+---@field macro jissai.highlight
+---@field string jissai.highlights.string
+---@field operator jissai.highlights.operator
+---@field syntax jissai.highlights.syntax
+---@field function_ jissai.highlights.function
+---@field variable jissai.highlights.variable
+---@field builtin jissai.highlights.builtin
+---@field lsp jissai.highlights.lsp
+---@field diagnostic jissai.highlights.diagnostic
+---@field docs jissai.highlights.docs
+---@field completion jissai.highlights.completion

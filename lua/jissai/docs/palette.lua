@@ -1,0 +1,34 @@
+---@meta _
+
+------------------------------------------------------------
+---@class jissai.palette
+------------------------------------------------------------
+---
+---@field blue jissai.hsl
+---@field purple jissai.hsl
+---@field sky jissai.hsl
+---
+---@field teal jissai.hsl
+---@field green jissai.hsl
+---@field yellow jissai.hsl
+---
+---@field red jissai.hsl
+---@field orange jissai.hsl
+---@field pink jissai.hsl
+---
+---@field text jissai.hsl
+---@field subtext1 jissai.hsl
+---@field subtext0 jissai.hsl
+---
+---@field overlay2 jissai.hsl
+---@field overlay1 jissai.hsl
+---@field overlay0 jissai.hsl
+---
+---@field surface2 jissai.hsl
+---@field surface1 jissai.hsl
+---@field surface0 jissai.hsl
+---
+---@field base2 jissai.hsl
+---@field base1 jissai.hsl
+---@field base0 jissai.hsl
+
