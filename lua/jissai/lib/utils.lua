@@ -58,9 +58,20 @@ local function isRgb(input)
         and type(input.b) == "number"
 end
 
----@return boolean
+---@return boolean using
+---@return string? flavor
 local function isNeovimUsingThisColorscheme()
-    return vim.g.colors_name ~= nil and string.match(vim.g.colors_name, "^jissai%-") ~= nil
+    if not vim.g.colors_name then
+        return false, nil
+    end
+
+    local flavor = string.match(vim.g.colors_name, "^jissai%-([%w_%-]+)$")
+
+    if not flavor then
+        return false, nil
+    end
+
+    return true, flavor
 end
 
 return {
