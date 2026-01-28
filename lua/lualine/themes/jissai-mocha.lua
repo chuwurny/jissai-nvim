@@ -1,1 +1,1 @@
-return require("jissai.integrations.lualine").apply("mocha")
+return require("jissai.integrations.lualine").generateFromFlavor("mocha")

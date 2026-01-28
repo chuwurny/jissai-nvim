@@ -1,1 +1,1 @@
-return require("jissai.integrations.lualine").apply("dark")
+return require("jissai.integrations.lualine").generateFromFlavor("dark")

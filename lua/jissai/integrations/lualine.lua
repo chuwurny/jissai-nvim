@@ -44,6 +44,13 @@ local function generate(palette, hls)
     })
 end
 
+local function generateFromFlavor(flavor)
+    local palette = require("jissai.palette").flavor(flavor)
+    local hls = require("jissai.highlights").highlightsFromPalette(palette)
+
+    return generate(palette, hls)
+end
+
 ---@param palette jissai.palette
 ---@param hls jissai.highlights
 local function applyEx(palette, hls)
@@ -62,4 +69,4 @@ local function apply(flavor)
     applyEx(palette, hls)
 end
 
-return { apply = apply, applyEx = applyEx } --[[@as jissai.integration]]
+return { apply = apply, applyEx = applyEx, generateFromFlavor = generateFromFlavor, generate = generate }
