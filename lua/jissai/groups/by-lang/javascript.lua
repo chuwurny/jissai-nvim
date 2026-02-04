@@ -51,7 +51,7 @@ return function(hls, gr)
         typescriptTemplateSB = hls.syntax.decoration, -- ${ }
         typescriptTypeBracket = hls.syntax.decoration, -- [ ]
         typescriptObjectType = hls.syntax.decoration, -- =>
-        typescriptCastKeyword = hls.syntax.keyword, -- as
+        typescriptCastKeyword = hls.operator.keyword, -- as
         typescriptTry = hls.syntax.keyword, -- try
         typescriptExceptions = hls.syntax.keyword, -- catch throw
 
