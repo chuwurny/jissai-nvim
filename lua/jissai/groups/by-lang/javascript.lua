@@ -62,6 +62,23 @@ return function(hls, gr)
         typescriptInterfaceName = "undefine",
 
         typescriptSpecial = hls.string.escape,
+
+        --
+        -- *somelib*Prop/Field stuff
+        --
+
+        typescriptArrayMethod = hls.text, -- .slice()
+        typescriptBOMLocationMethod = hls.text, -- .toString()
+        typescriptConsoleMethod = hls.text, -- console.log()/console.debug()/etc.
+        typescriptDOMDocProp = hls.text, -- .body/.title
+        typescriptDOMEventProp = hls.text, -- .type
+        typescriptDOMFormProp = hls.text, -- .length
+        typescriptDateStaticMethod = hls.text, -- Date.now()
+        typescriptES6SetProp = hls.text, -- .size
+        typescriptMathStaticMethod = hls.text, -- Math.min()/Math.random()/etc.
+        typescriptResponseProp = hls.text, -- .url
+        typescriptURLUtilsProp = hls.text, -- .searchParams
+        typescriptDestructureVariable = hls.text, -- browser/page
     })
 
     for k, v in pairs(groupsToApply) do
