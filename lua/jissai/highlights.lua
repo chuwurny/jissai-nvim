@@ -82,7 +82,7 @@ local function highlightsFromPalette(palette)
                 combine = true,
             },
             shadow = { bg = palette.overlay2, combine = true },
-            notext = { fg = palette.subtext0, combine = true },
+            notext = { fg = palette.surface0, combine = true },
             cursor = { style = { "reverse" }, combine = true }, --{ fg = palette.text, bg = palette.crust, combine = true },
             cursor_line = { bg = palette.base1, combine = true },
             search = {
