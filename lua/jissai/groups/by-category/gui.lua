@@ -4,8 +4,9 @@ return function(hls, gr)
     gr.Normal = hls.gui.background.focus
     gr.NormalNC = hls.gui.background.nofocus
 
-    gr.NormalFloat = { link = "Normal" }
-    gr.FloatBorder = hls.gui.border
+    gr.NormalFloat = hls.gui.float_background
+    gr.FloatBorder = hls.gui.float_border
+    gr.FloatTitle = hls.gui.float_background
 
     gr.NonText = hls.gui.notext
 
