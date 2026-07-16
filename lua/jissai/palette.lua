@@ -75,20 +75,19 @@ end
 local function light()
     local palette = {
         base0 = hsl("#ffffff"),
-        base1 = hsl("#e0e0e1"),
-        base2 = hsl("#cfced0"),
+        base1 = hsl("#ffffff"):li(-5.5 * 1),
+        base2 = hsl("#ffffff"):li(-5.5 * 2),
 
         text = hsl("#101010"),
-        subtext0 = hsl("#202020"),
-        subtext1 = hsl("#2e2e2e"),
+        subtext0 = hsl("#101010"):li(8.5 * 1),
+        subtext1 = hsl("#101010"):li(8.5 * 2),
 
-        surface0 = hsl("#d1d1d1"),
-        surface1 = hsl("#b7b7b7"),
-        surface2 = hsl("#a4a4a4"),
-
-        overlay0 = hsl("#949494"),
-        overlay1 = hsl("#878787"),
-        overlay2 = hsl("#7a7a7a"),
+        surface0 = hsl("#ffffff"):li(-5.5 * 3),
+        surface1 = hsl("#ffffff"):li(-5.5 * 4),
+        surface2 = hsl("#ffffff"):li(-5.5 * 5),
+        overlay0 = hsl("#ffffff"):li(-5.5 * 6),
+        overlay1 = hsl("#ffffff"):li(-5.5 * 7),
+        overlay2 = hsl("#ffffff"):li(-5.5 * 8),
 
         -- https://paletton.com/#uid=53W0o0kn7Ud3dZzeRVdvAUrVEGF
 
