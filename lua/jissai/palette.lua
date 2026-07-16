@@ -118,34 +118,12 @@ end
 local function dark()
     local palette = {
         base0 = hsl("#101010"),
-
-        text = hsl("#ffffff"),
-
-        --[[
-        base1 = hsl("#202020"),
-        base2 = hsl("#2e2e2e"),
-
-        subtext0 = hsl("#e0e0e1"),
-        subtext1 = hsl("#cfced0"),
-
-        -- https://paletton.com/#uid=13W0o0k00gx009l00dk05j10pm7
-
-        surface0 = hsl("#333333"),
-        surface1 = hsl("#494949"),
-        surface2 = hsl("#5b5b5b"),
-
-        -- https://paletton.com/#uid=13W0o0k00p100iM00m302rz07uU
-
-        overlay0 = hsl("#676767"),
-        overlay1 = hsl("#797979"),
-        overlay2 = hsl("#8a8a8a"),
-        ]]
-
-        subtext0 = hsl("#ffffff"):li(-8.5 * 1),
-        subtext1 = hsl("#ffffff"):li(-8.5 * 2),
-
         base1 = hsl("#101010"):li(7.5 * 1),
         base2 = hsl("#101010"):li(7.5 * 2),
+
+        text = hsl("#ffffff"),
+        subtext0 = hsl("#ffffff"):li(-8.5 * 1),
+        subtext1 = hsl("#ffffff"):li(-8.5 * 2),
 
         surface0 = hsl("#101010"):li(7.5 * 3),
         surface1 = hsl("#101010"):li(7.5 * 4),
