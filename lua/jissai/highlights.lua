@@ -73,18 +73,18 @@ local function highlightsFromPalette(palette)
             },
             float_background = {
                 as = "gui.background.focus",
-                bg = palette.surface0,
+                bg = palette.base1,
             },
-            border = { fg = palette.surface1, combine = true },
+            border = { fg = palette.base2, combine = true },
             float_border = {
                 as = "gui.float_background",
-                fg = palette.surface1,
+                fg = palette.base2,
                 combine = true,
             },
             shadow = { bg = palette.overlay2, combine = true },
             notext = { fg = palette.surface0, combine = true },
             cursor = { style = { "reverse" }, combine = true }, --{ fg = palette.text, bg = palette.crust, combine = true },
-            cursor_line = { bg = palette.base1, combine = true },
+            cursor_line = { bg = palette.base2, combine = true },
             search = {
                 bg = palette.yellow:rgb():alpha(palette.base0, 0.5):hsl(),
                 combine = true,
